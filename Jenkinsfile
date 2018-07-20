@@ -8,6 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'pwd && ls -l ./'
                 sh 'docker-compose -p testrun build --no-cache'
                 sh 'docker-compose -p testrun up'
             }
