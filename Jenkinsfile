@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker-compose -p testrun build'
-                sh 'docker-compose -p testrun up -d'
+                sh 'docker-compose -p testrun up'
             }
         }
     }
