@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Preparation') {
             steps {
-                git 'https://github.com/pwcXiangnan/tmpfiles'
+                git 'https://github.com/Xeonan/docker-compose-test.git'
             }
         }
         stage('Build') {
