@@ -12,10 +12,10 @@ pipeline {
                 sh 'docker-compose -p testrun up -d'
             }
         }
-        post {
-            success {
-                echo 'Test finished!'
-            }
+    }
+    post {
+        success {
+            echo 'Test finished!'
         }
     }
 }
