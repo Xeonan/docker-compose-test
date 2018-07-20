@@ -1,0 +1,31 @@
+version: '3'
+services:
+  app-service:
+    build: .
+    environment:
+      PORT: 3000
+    volumes:
+      - ./demo-server:/app
+    networks:
+      - testnet
+
+  tests:
+    image: testcafe/testcafe
+    depends_on:
+      - app-service
+    links:
+      - app-service
+    environment:
+      APP_SERVER: app-service
+    networks:
+      - testnet
+    volumes:
+      - ./:/tests
+    command: firefox /tests/test02.js
+
+volumes:
+  logvolume01: {}
+
+networks:
+  testnet: {
+  }
