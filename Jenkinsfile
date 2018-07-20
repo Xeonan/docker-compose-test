@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker-compose -p testrun build'
+                sh 'docker-compose -p testrun build --no-cache'
                 sh 'docker-compose -p testrun up'
             }
         }
