@@ -6,7 +6,7 @@ ADD ./demo-server /app
 
 RUN npm install
 
-RUN ls -l /app
+RUN ls -l ./
 
 EXPOSE 3000
 
