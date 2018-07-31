@@ -8,9 +8,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'pwd && ls -l ./'
-                sh 'docker-compose -p testrun build --no-cache'
-                sh 'docker-compose -p testrun up'
+              // get testcafe docker image
+              sh 'docker pull testcafe/testcafe'
+              sh 'pwd && ls -l ./'
+              // run test
+              sh 'docker run -v `pwd`:/tests testcafe/testcafe firefox:headless /tests/test-wiki.test.js'
             }
         }
     }
