@@ -1,5 +1,3 @@
 # tmpfiles
-123
-456
-dsfgsdfg
 
+[2013-new-repo-view]: https://github.com/isaacs/github/labels/2013-new-repo-view
